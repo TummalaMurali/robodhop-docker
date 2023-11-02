@@ -40,14 +40,14 @@ services:
     container_name: mysql
     networks:
       - roboshop
-  # shipping:
-  #   image: shipping:v1
-  #   container_name: shipping
-  #   networks:
-  #     - roboshop
-  #   depends_on:
-  #     - cart
-  #     - mysql
+  shipping:
+    image: shipping:v1
+    container_name: shipping
+    networks:
+      - roboshop
+    depends_on:
+      - cart
+      - mysql
   # rabbitmq:
   #   image: rabbitmq
   #   container_name: rabbitmq
@@ -76,5 +76,5 @@ services:
     - catalogue
     - user
     - cart
-    # - shipping
+    - shipping
     # - payment
